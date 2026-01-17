@@ -8,7 +8,7 @@ from sqlalchemy.orm import selectinload
 
 from app.manager import get_db
 
-from db.models import User, Task, SystemLog
+from ..db.models import User, Task, SystemLog
 
 from app.core.ws_manager import ws_manager
 

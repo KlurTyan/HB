@@ -2,7 +2,7 @@ from typing import Annotated
 
 from fastapi import WebSocket, APIRouter
 
-from db.models import User, Task, Reactions, SystemLog
+from ..db.models import User, Task, Reactions, SystemLog
 from fastapi.params import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
