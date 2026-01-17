@@ -5,7 +5,6 @@ from typing import Annotated
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, and_, func
 from sqlalchemy.orm import selectinload
-from starlette.websockets import WebSocket
 
 from app.manager import get_db
 
