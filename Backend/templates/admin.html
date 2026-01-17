@@ -1,0 +1,29 @@
+<div class="p-6 bg-black text-green-500 min-h-screen font-mono">
+    <h1 class="text-2xl mb-8 border-b border-green-500">ADMIN CORE v2.0</h1>
+
+    <div class="space-y-6">
+        <div class="border border-green-900 p-4">
+            <h2 class="mb-4 text-sm uppercase">Управление голосованием</h2>
+            <div class="flex gap-4">
+                <button onclick="api('/api/admin/poll/start')" class="bg-green-900/20 border border-green-500 p-4 w-full">
+                    START POLL
+                </button>
+                <button onclick="api('/api/admin/poll/stop')" class="bg-red-900/20 border border-red-500 p-4 w-full">
+                    STOP & LOG
+                </button>
+            </div>
+        </div>
+
+        <div class="border border-green-900 p-4">
+            <h2 class="mb-2 text-sm uppercase">Статус системы</h2>
+            <div id="admin-logs" class="text-[10px] h-40 overflow-y-auto opacity-70">
+                </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function api(path) {
+        await fetch(path, { method: 'POST' });
+    }
+</script>
