@@ -1,4 +1,6 @@
 from contextlib import asynccontextmanager
+from pathlib import Path
+
 from fastapi import FastAPI, Request
 import uvicorn
 from sqlalchemy.ext.asyncio import create_async_engine
@@ -24,7 +26,9 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(router)
 
-templates = Jinja2Templates(directory="templates")
+BASE_DIR = Path(__file__).resolve().parent
+
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 @app.get("/", response_class=HTMLResponse)
 async def read_item(request: Request, token: str = "guest"):

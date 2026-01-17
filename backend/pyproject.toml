@@ -5,7 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "db",
     "uvicorn>=0.40.0",
 ]
 
@@ -19,6 +18,3 @@ dev = [
     "sqlalchemy>=2.0.45",
     "websockets>=15.0.1",
 ]
-
-[tool.uv.sources]
-db = { path = "../DB" }
