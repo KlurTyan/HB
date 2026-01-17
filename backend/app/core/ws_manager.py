@@ -19,8 +19,4 @@ class ConnectionManager:
         tasks = [connection.send_text(message) for connection in self.active_connections]
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        for i, res in enumerate(results):
-            if isinstance(res, Exception):
-                print(f"Exception while sending message {i}: {res}")
-
 ws_manager =  ConnectionManager()
